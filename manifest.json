@@ -1,0 +1,27 @@
+{
+  "name": "Page Test",
+  "version": "1.0",
+  "description": "Opens up a page in a tab",
+  "icons": { "128": "icon_128.png" },
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery.min.js", "content.js"]
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "tabs",
+    "http://*/",
+    "https://*/"
+  ],
+  "manifest_version": 2
+}
